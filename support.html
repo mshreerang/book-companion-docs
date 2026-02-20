@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Companion - Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f7;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: #666;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1d1d1f;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #1d1d1f;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #666;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .contact-box h2 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .contact-box p {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .email-link {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📖 Book Companion</h1>
+            <p class="subtitle">Support & Help</p>
+        </header>
+
+        <div class="card">
+            <h2>Getting Started</h2>
+            
+            <h3>🚀 Quick Start Guide</h3>
+            <ol>
+                <li><strong>Add Your First Book:</strong> Tap the + button to search and add books</li>
+                <li><strong>Set Your Progress:</strong> Select which chapter you're currently on</li>
+                <li><strong>Generate Summary:</strong> Tap "Generate Summary" to get AI-powered recaps</li>
+                <li><strong>View Characters:</strong> Explore character profiles as they appear in the story</li>
+            </ol>
+
+            <h3>⚙️ AI Mode Setup</h3>
+            <p>To use AI-powered summaries and character profiles:</p>
+            <ol>
+                <li>Open <strong>Settings</strong> (gear icon)</li>
+                <li>Toggle <strong>AI Mode ON</strong></li>
+                <li>Enter your Anthropic API key when prompted</li>
+                <li>Generate summaries for any book!</li>
+            </ol>
+            
+            <p><strong>Need an API key?</strong> Sign up at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> (free trial available)</p>
+        </div>
+
+        <div class="card">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3>Q: How do I get an API key?</h3>
+                <p><strong>A:</strong> Visit <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>, create a free account, and generate an API key. New users get $5 in free credits to start!</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q: Can I use the app without an API key?</h3>
+                <p><strong>A:</strong> Yes! You can track your reading progress, manage your library, and use all organizational features without AI Mode. AI features (summaries and characters) require an API key.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q: How much do AI features cost?</h3>
+                <p><strong>A:</strong> AI features use pay-as-you-go pricing through Anthropic. A typical summary costs less than $0.01. The app itself is completely free!</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q: Is my reading data private?</h3>
+                <p><strong>A:</strong> Absolutely! All your books and progress are stored locally on your device. We don't collect or store any of your reading data on our servers.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q: Can I change the summary language?</h3>
+                <p><strong>A:</strong> Yes! In Book Details → Settings, you can choose English, Hindi, or Marathi for your summaries.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q: What if the summary isn't accurate?</h3>
+                <p><strong>A:</strong> Tap "Regenerate Summary" to get a fresh version. The AI analyzes the book each time, so results may vary slightly.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q: Can I export or share summaries?</h3>
+                <p><strong>A:</strong> Yes! Tap the share button (📤) in the summary view to export via Messages, Mail, Notes, or any other app.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q: The app crashes when generating summaries. What should I do?</h3>
+                <p><strong>A:</strong> Try these steps:</p>
+                <ul>
+                    <li>Check your internet connection</li>
+                    <li>Verify your API key is correct in Settings</li>
+                    <li>Restart the app</li>
+                    <li>If the issue persists, contact support below</li>
+                </ul>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q: Can I sync across devices?</h3>
+                <p><strong>A:</strong> Currently, data is stored locally on each device. Cloud sync is planned for a future update!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Troubleshooting</h2>
+            
+            <h3>🔧 Common Issues</h3>
+            
+            <p><strong>Summary generation fails:</strong></p>
+            <ul>
+                <li>Check that AI Mode is enabled in Settings</li>
+                <li>Verify your API key is correct</li>
+                <li>Ensure you have internet connection</li>
+                <li>Check that you have API credits remaining</li>
+            </ul>
+
+            <p><strong>Book covers not loading:</strong></p>
+            <ul>
+                <li>Check internet connection</li>
+                <li>Try clearing cover cache in Settings</li>
+                <li>Restart the app</li>
+            </ul>
+
+            <p><strong>Text-to-speech not working:</strong></p>
+            <ul>
+                <li>Check device volume</li>
+                <li>Ensure the app has microphone permissions (Settings → Privacy)</li>
+                <li>Restart the app</li>
+            </ul>
+        </div>
+
+        <div class="contact-box">
+            <h2>Still Need Help?</h2>
+            <p>We're here to help! Send us an email with your question or issue.</p>
+            <a href="mailto:support@bookcompanion.app" class="email-link">✉️ Email Support</a>
+            <p style="margin-top: 20px; font-size: 14px;">We typically respond within 24 hours</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; color: #999; font-size: 14px;">
+            <p>Book Companion v1.0</p>
+            <p>© 2026 Shree Ranganathan. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="privacy-policy.html" style="color: #999;">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
