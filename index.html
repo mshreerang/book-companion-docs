@@ -1,10 +1,333 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Book Companion</title>
-    <meta http-equiv="refresh" content="0; url=support.html">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vivan Labs — Mobile Apps for Curious Minds</title>
+  <meta name="description" content="Vivan Labs builds thoughtful mobile apps. TwoParents delivers weekly expert parenting tips to both parents, in sync.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand: #4F46E5;
+      --brand-light: #EEF2FF;
+      --warm: #C2672A;
+      --warm-light: #FDF3EC;
+      --text: #111827;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --bg: #FFFFFF;
+      --radius: 12px;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--brand); }
+
+    nav a {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    nav a:hover { color: var(--brand); }
+
+    .hero {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--brand-light);
+      color: var(--brand);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 99px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+
+    h1 span { color: var(--brand); }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .apps-grid {
+      max-width: 640px;
+      margin: 0 auto 5rem;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card--indigo::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #4F46E5, #818CF8);
+    }
+
+    .card--warm::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #C2672A, #E8956A);
+    }
+
+    .card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+    }
+
+    .card-label--indigo { color: var(--brand); }
+    .card-label--warm   { color: var(--warm); }
+
+    .card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .feature--indigo::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+      flex-shrink: 0;
+    }
+
+    .feature--warm::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--warm);
+      flex-shrink: 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .pill--muted {
+      background: #F3F4F6;
+      color: var(--muted);
+    }
+
+    .pill--warm {
+      background: var(--warm-light);
+      color: var(--warm);
+    }
+
+    .about {
+      background: #F9FAFB;
+      border-top: 1px solid var(--border);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .about-inner {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .about h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.3px;
+    }
+
+    .about p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    footer p {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--brand); }
+
+    @media (max-width: 480px) {
+      .features { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
-    <p>Redirecting to <a href="support.html">Support</a></p>
+
+<nav>
+  <a href="/" class="logo">Vivan<span>Labs</span></a>
+  <a href="mailto:support@vivanlabs.com">Contact</a>
+</nav>
+
+<section class="hero">
+  <div class="badge">Mobile Apps</div>
+  <h1>Thoughtful apps for<br><span>curious minds</span></h1>
+  <p>We build focused, intelligent mobile experiences. Based in the United Kingdom.</p>
+</section>
+
+<section class="apps-grid">
+
+  <!-- TwoParents — Coming Next -->
+  <div class="card card--warm">
+    <div class="card-label card-label--warm">Coming Next</div>
+    <h2>TwoParents</h2>
+    <p>Weekly expert-vetted parenting tips, delivered to both parents at the same time. Stay aligned, whatever your style.</p>
+    <div class="features">
+      <span class="feature feature--warm">Weekly Tips</span>
+      <span class="feature feature--warm">Partner Sync</span>
+      <span class="feature feature--warm">Parenting Quiz</span>
+      <span class="feature feature--warm">Mid-Week Nudges</span>
+      <span class="feature feature--warm">Tip History</span>
+      <span class="feature feature--warm">Success Log</span>
+    </div>
+    <span class="pill pill--warm">Coming to the App Store soon</span>
+  </div>
+
+  <!-- BookCompanion — Live -->
+  <div class="card card--indigo">
+    <div class="card-label card-label--indigo">Now Available</div>
+    <h2>BookCompanion AI</h2>
+    <p>The AI reading assistant that helps you track and remember complex books — spoiler-free summaries, character guides, and chat with your favourite characters.</p>
+    <div class="features">
+      <span class="feature feature--indigo">AI Summaries</span>
+      <span class="feature feature--indigo">Character Cards</span>
+      <span class="feature feature--indigo">Character Chat</span>
+      <span class="feature feature--indigo">Progress Tracking</span>
+      <span class="feature feature--indigo">Series Awareness</span>
+      <span class="feature feature--indigo">Text to Speech</span>
+    </div>
+    <a href="https://apps.apple.com/gb/app/book-companion-ai/id6759411769" class="app-store-btn" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download on the App Store
+    </a>
+  </div>
+
+</section>
+
+<section class="about">
+  <div class="about-inner">
+    <h3>About Vivan Labs</h3>
+    <p>Vivan Labs Ltd is a UK-registered independent software company building mobile apps that respect your time and intelligence. We believe the best apps do one thing exceptionally well.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Vivan Labs Ltd. Registered in England and Wales.</p>
+  <div style="display:flex;gap:1.25rem;">
+    <a href="mailto:support@vivanlabs.com">support@vivanlabs.com</a>
+    <a href="https://mshreerang.github.io/book-companion-docs/twoparents-privacy.html">TwoParents Privacy</a>
+    <a href="https://mshreerang.github.io/book-companion-docs/twoparents-terms.html">TwoParents Terms</a>
+  </div>
+</footer>
+
 </body>
 </html>
